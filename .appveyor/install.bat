@@ -1,8 +1,8 @@
 @echo off
 
 SET BUILD_DIR=C:\TBuild
-set LIB_DIR=%BUILD_DIR%\Libraries
-set SRC_DIR=%BUILD_DIR%\tdesktop
+SET LIB_DIR=%BUILD_DIR%\Libraries
+SET SRC_DIR=%BUILD_DIR%\tdesktop
 SET QT_VERSION=5_6_2
 
 cd %BUILD_DIR%
