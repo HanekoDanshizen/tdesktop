@@ -5,9 +5,10 @@ SET LIB_DIR=%BUILD_DIR%\Libraries
 SET SRC_DIR=%BUILD_DIR%\tdesktop
 SET QT_VERSION=5_6_2
 
-cd %BUILD_DIR%
-
+call ".\common.bat"
 call "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat" x86
+
+cd %BUILD_DIR%
 
 call:configureBuild
 call:getDependencies
@@ -19,10 +20,6 @@ echo Finished!
 GOTO:EOF
 
 :: FUNCTIONS
-:logInfo
-    echo [INFO] %~1
-GOTO:EOF
-
 :getDependencies
     call:logInfo "Clone dependencies repository"
     git clone -q --depth 1 --branch=master https://github.com/telegramdesktop/dependencies_windows.git %LIB_DIR%
