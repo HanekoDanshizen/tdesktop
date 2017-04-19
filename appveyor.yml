@@ -15,8 +15,9 @@ matrix:
   fast_finish: true
 
 init:
-  - echo %APPVEYOR_REPO_COMMIT_MESSAGE_EXTENDED%
-  - exit 2
+  - echo "%APPVEYOR_REPO_COMMIT_MESSAGE%"
+  - echo "%APPVEYOR_REPO_COMMIT_MESSAGE_EXTENDED%"
+  - exit 1
 
 install:
   - .\.appveyor\check.bat
